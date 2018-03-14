@@ -60,7 +60,8 @@
       mounted (){
           this.$nextTick(()=>{
              new BScroll('.header_list',{
-              click: true
+              click: true,
+               scrollX:true
             })
           })
 

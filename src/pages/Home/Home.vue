@@ -173,10 +173,15 @@
             el: '.swiper-pagination'
           }
         })
-
-        var superScroll  = new BScroll( '.surprise-scroll' ,{
-            click: true
+        this.$nextTick(()=>{
+          new BScroll( '.surprise-scroll' ,{
+            click: true,
+            scrollX: true
+          })
         })
+
+
+
 
       }
     }
@@ -252,9 +257,9 @@
             height 140px
             overflow hidden
             .scroll_wrap
-              width 100%
+              height 100%
               .scroll_item
-                width 30%
+                width 90px
                 float left
                 /*display flex*/
                 /*justify-content center*/

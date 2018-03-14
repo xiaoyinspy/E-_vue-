@@ -1,5 +1,6 @@
 <template>
-  <div> Profile</div>
+  <div>
+  <i class="sanjiao"></i></div>
 </template>
 <script>
     export default {}
