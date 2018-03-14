@@ -1,0 +1,24 @@
+.header .header_top {
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+}
+.header .header_top .select {
+  flex: 3;
+}
+.header .header_top .search {
+  flex: 9;
+}
+.header .header_top .talk {
+  flex: 1;
+}
+.header .header_list {
+  height: 30px;
+}
+.header .header_list .scroll_ul {
+  display: flex;
+  justify-content: space-around;
+}
+.header .header_list .scroll_li {
+  flex: 1;
+}
