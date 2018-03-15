@@ -1,3 +1,4 @@
-/**
- * Created by 小银spy on 2018/3/15.
- */
+
+import ajax from './ajax'
+
+export const reqCategorys = () => ajax('./categorys')

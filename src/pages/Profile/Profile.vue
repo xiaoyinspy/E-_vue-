@@ -82,7 +82,6 @@
     background-image url("./login/d6aa601c1a4b5789b776f18261a960f6.png")
     background-size 100%
     background-repeat no-repeat
-    height 80%
     background-color white
     .header
       width 100%

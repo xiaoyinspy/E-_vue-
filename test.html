@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style type="text/css">
+    .app{
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0,0,0,0.1);
+      box-sizing: content-box;
+      border: solid 10px;
+      padding: 30px;
+      background-color: yellowgreen;
+    }
+  </style>
+  <!--
+      box-sizing : 默认获取父元素的宽高
+                   content-box:宽度和高度分别应用到元素的内容框。
+                                在宽度和高度之外绘制元素的内边距和边框
+                    border-box :
+
+  -->
+  <!--box-sizing: content-box|border-box|inherit;-->
+</head>
+<body>
+<div class="app">
+  <div class="box"></div>
+</div>
+
+</body>
+</html>

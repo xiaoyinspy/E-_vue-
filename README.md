@@ -51,11 +51,9 @@
        2.首页的动画效果的实现
        3.轮播图导航小圆点样式的修改(完成，在Swiper自动生成的类上进行添加)
        *4.首页的广告    
-       5.小狗眨眼动画效果  动画切换
+       5.小狗眨眼动画效果  动画切换(已经完成)
        6.购物车，头部不能开启固定定位（还未解决）；显示与隐藏的动画效果实现有问题（还未解决）；
         购物车背景图片定位有问题
-       7.boxing-size问题 box-sizing content-box 以及border-box
-          div盒子宽度设置为100%之后，出现溢出的问题(不清楚原因)
     今日收获：
         1.了解到了 动画效果跳跃steps，可以使用动画进行状态切换
         animation: test 2s steps (1,end) infinite
@@ -72,7 +70,7 @@
          }
          2. 如何用border来画小三角  
                  例子：向上的白色小三角
-                       >i
+                       >ihttps://github.com/xiaoyinspy/E-_vue-
                        width: 0
                        height: 0
                        display block
@@ -84,5 +82,16 @@
                        left: 0
                        right: 0
                        margin: auto
+
+##  day03
+    遗留的问题：
+        1.在brand中，使用bscroll,出现问题。
+        2.购物车显示与隐藏动画？？？点击切换
+    今日任务：
+        1.分类页面 动态数据的获取
+        2.首页头部点击切换样式
+        * 3.首页广告的设置
+        
+                       
 
         

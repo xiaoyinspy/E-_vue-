@@ -35,7 +35,6 @@
       </div>
     </div>
 
-
   </div>
 </template>
 <script>
@@ -89,6 +88,7 @@
         margin-right  10px
     .toggle
       height 80px
+      overflow hidden
       display flex
       justify-content space-around
       align-items center
@@ -120,16 +120,11 @@
           font-size 14px
           color black
       &.slide-enter-active
-        animation  toggle_in 1.5s
-      &.slide-leave-active
-        animation  toggle_in 1.5s reverse
-      @keyframes  toggle_in
-        0%
-          transform: translateY(-100%);
-        50%
-          transform: translateY(-50%);
-        100%
-          transform: translateY(0%);
+        transition all 1s ease-out
+      &.slide-enter-active
+        transition all 1.5s ease-out
+      &.slide-enter,&.slider-leave-to
+        height 0px
     .cart_content
       background-color white
       height 25%
