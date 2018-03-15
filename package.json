@@ -20,6 +20,7 @@
     "pubsub-js": "^1.6.0",
     "swiper": "^4.1.6",
     "vue": "^2.5.2",
+    "vue-loader": "^13.7.1",
     "vue-resource": "^1.5.0",
     "vue-router": "^3.0.1",
     "vue-scroller": "^2.2.4",

@@ -116,7 +116,6 @@
      width 100%
      height 5px
      display block
-     margin-top 5px
      background-color $green
 
 </style>
