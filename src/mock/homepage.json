@@ -1,0 +1,146 @@
+{
+  "menus": [
+    {
+      "menu_name": "首页",
+      "menu_font_color": "#459d36",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    },
+    {
+      "menu_name": "狗狗主粮",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    },
+    {
+      "menu_name": "服饰城",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": "https://wap.epet.com/clothmall/main.html?pet_type=dog"
+    },
+    {
+      "menu_name": "医疗保健",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    },
+    {
+      "menu_name": "零食玩具",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    },
+    {
+      "menu_name": "日用外出",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    },
+    {
+      "menu_name": "美容香波",
+      "menu_font_color": "#e73f85",
+      "menu_line_color": "#459d36",
+      "menu_target": ""
+    }
+  ],
+  "dog_banner": [
+    "https://img2.epetbar.com/nowater/2018-03/12/18/369bb47c593f6944600ffd807bad927d.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/13/11/22878e4e3dfd9fb615efbdd8204f597c.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/9001cc1717d37b1fbb8feaf3a0ee9d73.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/21/8487a490b5541a4154f57000db9c3193.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/20/6814c3e5ea5473b8c7b07bf0cbe0472d.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/13/19/f5a32bf355d4a52b33d6c9434a5b7f63.jpg@!water"
+  ],
+  "dog_img": "https://img2.epetbar.com/nowater/2018-03/12/18/b611670706f71f0ba6937083d201996e.jpg@!water",
+  "menu_list": [
+    "https://img1.epetbar.com/2018-03/12/17/881c6f016aa0c22104011926e51b4f47.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/36ce3471dd689ed7377d09b9986303c9.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/5dc60db864d3123929f432e7757ceb96.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/a6cf6fd5d724bb125b40b17fba0cbe12.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/f8ea826966dcee6abccf2a9574b0e36e.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/20/5a6991defe3616bb1208506f5f0d78da.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/b799562d3f7f8ca39769dc5fd1794a4a.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/420a7f62887b490aa7c627dc5364178d.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/dfa5a7598e3ee203c05f0f03fc182edc.jpg@!water",
+    "https://img1.epetbar.com/2018-03/12/17/038add951408054bafb01498e8d98635.jpg@!water"
+  ],
+  "miaosha": "https://img2.epetbar.com/nowater/2018-03/13/09/85e2ada29e2157daeda797903cd13dd2.jpg@!water",
+  "brand_power": "https://img2.epetbar.com/nowater/2018-03/12/18/f1b7fefaf2e0a3b01498658788d75fbd.jpg@!water",
+  "gif": "https://img2.epetbar.com/nowater/2018-03/12/19/081c4aec9c8c81fa8dcb5bb9a63ddac5.gif",
+  "vip": "https://img2.epetbar.com/nowater/2018-03/12/18/02cdfda794ee4cc90e0e39462e17d49d.jpg@!water",
+  "vip_services": [
+    "https://img2.epetbar.com/nowater/2018-03/12/19/09463758eb284f5a12ab248e41f4aa11.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/3940d5339d02eebcdd5d7cc1d3a46845.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/fd6e6a5c56820b18eb2e0f6e359d9f59.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/071f8a55cf20097fb53de090e0a0dc16.jpg@!water"
+  ],
+  "dapaituan": "https://img2.epetbar.com/nowater/2018-03/12/18/5fd369ed534f5a32ac751ff29ab90034.jpg@!water",
+  "dapaituan_list": [
+    "https://img2.epetbar.com/nowater/2018-03/12/19/3c54559f077235436b408a6839138b4f.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/9ab35e8f6f88e2adac715cd83ac5c69c.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/9e4502cf22ecb6f8b97715c7fc73ed50.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/3ea8f16882581307427bd3d962fc6dd0.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/d3d4c3ee17f2a047f3eee2ec30591aac.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/f122ae20ce1880988ff7e5c64440675a.jpg@!water"
+  ],
+  "haohuo": "https://img2.epetbar.com/nowater/2018-03/12/18/0d6125d9f846519e83e7354bd8638cf7.jpg@!water",
+  "haohuo_list": [
+    "https://img2.epetbar.com/nowater/2018-03/12/18/48f18920d1f1ee4e52039bf92da2e805.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/188ceb72ed63b6ddffa093f25f517727.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/fc7b286676d1bf3fbe2d2b4b1ac633a6.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/3ea747d791b0923f775d1b23b5da9485.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/10a5324b7c6f1763122f2ee9cd54b5b7.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/67301c12c7193d19e515c59d2bf2d15a.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/b91027e7b664ebd165c8dc690fd9b778.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/b30bab969d87ef724986ad42420432f4.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/20/65678184bb4de75f638fc8eceb385895.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/f8a0cfdd51726c57ed46f5572f8112a0.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/4fd9b25c7e17a9d1648385df0f0ce6ac.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/5fe499c60a8cd531d01b260de03db66f.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/48df78ab2d47d7275a70e0f6616f4871.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/18/e42b17ac0b90658d5baf958ac189c398.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/51dd5586ef84f23f08aedde0970dd5b4.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/7a6f57891fb9ff3c6317888454fdc4c9.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/83b7b8781d071c6eb39eff60e8801cef.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/46387690818f6ef9a4d295a5bbc2e420.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/0a62002ed3ef0055064da37248c99069.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/9e73a680ceeedf7f8684f7db4362e65e.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/251c338d93a161cc45976457132007d1.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/1cd073f15561b4d83e98014e08bbb768.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/f55afa10aaaeb817deda8691343e82c8.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/e36ce85d95650cf30ff662d8f7882f9b.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/d051ca90a097ac04146015e93471dbf7.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/9749a0a812142ea58454b636b1b7bfda.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/fb3ff0a847807cf6491cd9e8caa7a290.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/595658d72bef33201f6fee8d955d9804.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/07d06d90587c934c29b183635639f1e2.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/90843b5ca6857f72a18c3b49ade97bd0.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/cc2cf3f612469c1b382b4e20f6a09b40.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/01038ca097c3c47e9e9b505f0ccc3880.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/344f8169fcb1a8cee4fadd58a92e6226.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/09100ad0dd13768c9b81179e750947cc.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/8b1023810c1c6255c2752bee49bafb2f.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/80ab5eb842915bffa4cae897353efce6.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/22d6488906dc86da78f76b7cfe754571.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/bd91436be7133831d122d31ec3dbc636.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/8be9bdc8d0b516e67d1e043f5791ae5d.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/e44db0037b09c35fb3180a796cbd3efe.jpg@!water"
+  ],
+  "zuican": "https://img2.epetbar.com/nowater/2018-03/12/19/313106e05cd8b140f4bc8d298d98e87a.jpg@!water",
+  "zuican_content": "https://img2.epetbar.com/nowater/2018-03/13/11/bac4f238ed715999f7d5bd9d4f0ab56e.jpg@!water",
+  "special": "https://img2.epetbar.com/nowater/2018-03/12/19/4e129b980839446eabb5fce594f60364.jpg@!water",
+  "special_list": [
+    "https://img2.epetbar.com/nowater/2018-03/12/19/62c5a1f0c1b4b535aee4a537864ecd45.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/ca4e375ccf9992ce0e8666c256b6ef4e.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/e25b9300c387beec0b28499a8f19d83e.jpg@!water"
+  ],
+  "lanmu": "https://img2.epetbar.com/nowater/2018-03/12/19/83a8298fad417a66415c11e0acfac335.jpg@!water",
+  "lanmu_list": [
+    "https://img2.epetbar.com/nowater/2018-03/12/19/c0cbc5428d12daf97c03ce5cb4b2eb41.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/972f41b92482a495640ad9be2793e8bf.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/18442aea515fdb23ec49d837bbe3dac1.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/fd2e96a45cc0e35e8ae09fad888707e4.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/819706ef8fb7e34de1c4ae76729db425.jpg@!water",
+    "https://img2.epetbar.com/nowater/2018-03/12/19/b621c0313bc872ad97fa63e2e431750b.jpg@!water"
+  ]
+}

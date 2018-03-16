@@ -12,6 +12,7 @@ Vue.use(VueRouter)
 
 // 向外暴露vuerouter对象
 export default new VueRouter({
+  linkActiveClass: 'on',
   routes: [
     {
       path:'/home',

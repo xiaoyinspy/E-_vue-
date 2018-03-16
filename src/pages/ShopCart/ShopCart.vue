@@ -5,8 +5,9 @@
       <span>购物车</span>
       <div class="imgtk" @click="showToggle"></div>
     </div>
-    <transition name="slide">
-      <div class="toggle" v-if="isShow">
+    <!--<transition name="slide">-->
+    <div class="container" :class="{on:isShow}">
+      <div class="toggle" >
         <a href="javascript:;">
           <span class="icon header_icon1"  ></span>
           <span class="text">首页</span>
@@ -24,7 +25,7 @@
           <span class="text">我的e宠</span>
         </a>
       </div>
-    </transition>
+    <!--</transition>-->
     <div class="cart_content">
       <div class="cart_pic">
       </div>
@@ -34,7 +35,7 @@
         <div class="button">我的收藏</div>
       </div>
     </div>
-
+    </div>
   </div>
 </template>
 <script>
@@ -68,6 +69,8 @@
       bottom-border-1px($gray)
       padding  0 10px
       font-size 18px
+      z-index 20
+      background-color white
       .personal-bico1
         float left
         width 30px
@@ -86,75 +89,82 @@
         background-repeat no-repeat
         margin-top 15px
         margin-right  10px
-    .toggle
-      height 80px
-      overflow hidden
-      display flex
-      justify-content space-around
-      align-items center
-      background-color white
-      color: #000
-      top-border-1px($gray)
-      bottom-border-1px($gray)
-      >a
+    .container
+      transform translateY(-80px)
+      transition-duration 0.5s
+      &.on
+        transform translateY(0px)
+        transition-duration 0.5s
+      .toggle
+        height 80px
+        overflow hidden
+        display flex
+        justify-content space-around
+        align-items center
+        background-color white
+        color: #000
+        top-border-1px($gray)
+        bottom-border-1px($gray)
+        >a
+          display flex
+          flex-direction column
+          text-align center
+          justify-content space-around
+          .icon
+            display inline-block
+            margin 0 auto
+            width 30px
+            height 30px
+            background-size 100%
+            margin-bottom 10px
+            &.header_icon1
+              background-image url("./shopcart/head_icon1.png")
+            &.header_icon2
+              background-image url("./shopcart/head_icon2.png")
+            &.header_icon4
+              background-image url("./shopcart/head_icon4.png")
+            &.header_icon5
+              background-image url("./shopcart/head_icon5.png")
+          .text
+            font-size 14px
+            color black
+  /*      &.slide-enter-active
+          transition all 1s ease-out
+        &.slide-leave-active
+          transition all 1.5s ease-out
+        &.slide-enter,&.slide-leave-to
+          height 0px*/
+
+      .cart_content
+        background-color white
+        height 25%
         display flex
         flex-direction column
-        text-align center
         justify-content space-around
-        .icon
-          display inline-block
-          margin 0 auto
-          width 30px
-          height 30px
-          background-size 100%
-          margin-bottom 10px
-          &.header_icon1
-            background-image url("./shopcart/head_icon1.png")
-          &.header_icon2
-            background-image url("./shopcart/head_icon2.png")
-          &.header_icon4
-            background-image url("./shopcart/head_icon4.png")
-          &.header_icon5
-            background-image url("./shopcart/head_icon5.png")
-        .text
+        align-items center
+        color: $gray
+        font-size 13px
+        .cart_pic
+          width 100px
+          height 100px
+          background-repeat no-repeat
+          background-image url("./shopcart/cart-ico.png")
+          background-position -200px
+          background-color $gray
+        .cart_button
           font-size 14px
-          color black
-      &.slide-enter-active
-        transition all 1s ease-out
-      &.slide-enter-active
-        transition all 1.5s ease-out
-      &.slide-enter,&.slider-leave-to
-        height 0px
-    .cart_content
-      background-color white
-      height 25%
-      display flex
-      flex-direction column
-      justify-content space-around
-      align-items center
-      color: $gray
-      font-size 13px
-      .cart_pic
-        width 100px
-        height 100px
-        background-repeat no-repeat
-        background-image url("./shopcart/cart-ico.png")
-        background-position -200px
-        background-color $gray
-      .cart_button
-        font-size 14px
-        width 50%
-        display flex
-        justify-content space-around
-        margin 10px auto
-        >div
-          border solid 1px
-          border-radius 5px
-          width 40%
-          height 35px
-          line-height 30px
-          text-align center
-          display inline-block
+          width 50%
+          display flex
+          justify-content space-around
+          margin 10px auto
+          >div
+            border solid 1px
+            border-radius 5px
+            width 40%
+            height 35px
+            line-height 30px
+            text-align center
+            display inline-block
 
 
 </style>

@@ -10,46 +10,13 @@
     </div>
     <div class="header_list">
       <ul class="scroll_ul">
-        <li class="scroll_li on" >
-            <span >首页</span>
+        <router-link to="/home">
+        <li  class="scroll_li" v-for="(menu,index) in menus" @click="setIndex(index)"
+            :class="{on: index == currentIndex}" :key="index">
+            <span >{{menu.menu_name}}</span>
             <div class="div"></div>
         </li>
-        <li class="scroll_li">
-          <a>
-            <span>狗狗主粮</span>
-            <i></i>
-          </a>
-        </li>
-        <li class="scroll_li">
-          <a>
-            <span>服饰城</span>
-            <i></i>
-          </a>
-        </li>
-        <li class="scroll_li">
-          <a>
-            <span>医疗保健</span>
-            <i></i>
-          </a>
-        </li>
-        <li class="scroll_li">
-          <a>
-            <span>零食玩具</span>
-            <i></i>
-          </a>
-        </li>
-        <li class="scroll_li">
-          <a>
-            <span>日用外出</span>
-            <i></i>
-          </a>
-        </li>
-        <li class="scroll_li">
-          <a>
-            <span>美容香波</span>
-            <i></i>
-          </a>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -57,7 +24,16 @@
 <script>
   import BScroll from 'better-scroll'
     export default {
+      props:{
+          menus:Array //头部菜单数据
+      },
+      data () {
+        return {
+            currentIndex: 0 , //当前选中
+        }
+      },
       mounted (){
+          const menus = this.menus
           this.$nextTick(()=>{
              new BScroll('.header_list',{
               click: true,
@@ -65,6 +41,11 @@
             })
           })
 
+      },
+      methods:{
+        setIndex(index){
+            this.currentIndex = index
+        }
       }
     }
 
@@ -117,5 +98,6 @@
      height 5px
      display block
      background-color $green
+     margin-top -2px
 
 </style>

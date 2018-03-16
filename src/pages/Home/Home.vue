@@ -2,76 +2,34 @@
   <div class="home">
     <!--小狗眨眼动画效果-->
     <div class="dog"></div>
-    <Header class="header" />
+    <Header class="header" :menus="home.menus"/>
     <!--轮播图-->
     <div class="banner_item">
       <div class="banner swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="./haiwai.jpg">
-          </div>
-          <div class="swiper-slide" >
-              <img src="./baolu.jpg">
-          </div>
-          <div class="swiper-slide" >
-            <img src="./fumo.jpg">
-          </div>
-          <div class="swiper-slide" >
-              <img src="./ouguan.jpg">
-          </div>
-          <div class="swiper-slide" >
-              <img src="./zhuliang.jpg">
-          </div>
-          <div class="swiper-slide" >
-              <img src="./tongzhi.jpg">
+          <div class="swiper-slide" v-for="(banner,index) in home.dog_banner" :key="index">
+              <img :src="banner">
           </div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
       <div class="banner_bottom">
-        <img src="./dog.jpg">
+        <img v-lazy="home.dog_img">
       </div>
       <div class="columnnavdiv">
         <!--menu菜单图标-->
         <div>
           <ul class="menu_content">
-          <li class="fl">
-            <img src="./images/menu/1.jpg">
+          <li class="fl" v-for="(list,index) in home.menu_list" :key="index">
+            <img v-lazy="list">
           </li>
-            <li class="fl">
-              <img src="./images/menu/2.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/3.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/4.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/5.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/6.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/7.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/8.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/9.jpg">
-            </li>
-            <li class="fl">
-              <img src="./images/menu/10.jpg">
-            </li>
         </ul>
         </div>
     </div>
   </div>
     <!--正品秒杀，大牌1折秒-->
     <div class="banner1">
-      <img src="./images/banner/85e2ada29e2157daeda797903cd13dd2.jpg" width=100%>
+      <img :src="home.miaosha" width=100%>
     </div>
     <!--本场活动-->
     <div>
@@ -82,11 +40,9 @@
               <img src="./images/surper/2.png">
             </div>
             <div class="tit_right">
-              <!--<span class="endTime">本场结束</span>-->
-              <!--<div class="text_div">-->
-              <!--<span class="text">12</span><span>:</span>-->
-              <!--<span class="text">00</span>-->
-              <!--</div>-->
+              <span class="endTime">本场结束</span>
+              <span class="text">12</span><span>:</span>
+              <span class="text">00</span>
               <img  class="more" src="./images/surper/1.png">
             </div>
           </div>
@@ -105,89 +61,69 @@
       </div>
       <!--品牌力量-->
       <div class="banner1">
-        <img src="./images/banner/f1b7fefaf2e0a3b01498658788d75fbd.jpg" width=100%>
+        <img :src="home.brand_power" width=100%>
       </div>
 
     </div>
     <!--gif动图-->
     <div class="banner1">
-      <img src="./images/banner/1.gif" width=100%>
+      <img :src="home.gif" width=100%>
     </div>
     <!--VIP尊享服务-->
     <div class="Vip">
       <div class="banner1">
-        <img src="./images/banner/02cdfda794ee4cc90e0e39462e17d49d.jpg" width=100%>
+        <img :src="home.vip" width=100%>
       </div>
       <!--服务列表-->
-      <img src="./images/vip/071f8a55cf20097fb53de090e0a0dc16.jpg" class="vipServer" v-for="item in 4" :key="item">
+      <img :src="vip_service" class="vipServer" v-for="(vip_service,index) in home.vip_services" :key="index">
 
     </div>
     <!--大牌带你刺激1折-->
     <div class="banner1">
-      <img src="./images/banner/5fd369ed534f5a32ac751ff29ab90034.jpg" width=100%>
+      <img :src="home.dapaituan" width=100%>
     </div>
     <!--今日特价团 轮播图-->
     <div class="day swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" width="100%">
-          <img src="./images/lun/f122ae20ce1880988ff7e5c64440675a.jpg" width="100%" >
-        </div>
-        <div class="swiper-slide" width="100%" >
-          <img src="./images/lun/3c54559f077235436b408a6839138b4f.jpg" width="100%" >
-        </div>
-        <div class="swiper-slide" width="100%">
-          <img src="./images/lun/3ea8f16882581307427bd3d962fc6dd0.jpg" width="100%" >
-        </div>
-        <div class="swiper-slide" width="100%">
-          <img src="./images/lun/9ab35e8f6f88e2adac715cd83ac5c69c.jpg" width="100%" >
-        </div>
-        <div class="swiper-slide" width="100%">
-          <img src="./images/lun/9e4502cf22ecb6f8b97715c7fc73ed50.jpg" width="100%" >
-        </div>
-        <div class="swiper-slide" width="100%">
-          <img src="./images/lun/d3d4c3ee17f2a047f3eee2ec30591aac.jpg" width="100%" >
+        <div class="swiper-slide" width="100%" v-for="(list,index) in home.dapaituan_list" :key="index">
+          <img :src="list" width="100%" >
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
     <!--大牌好货-->
     <div class="banner1">
-      <img src="./images/banner/0d6125d9f846519e83e7354bd8638cf7.jpg" width=100%>
+      <img :src="home.haohuo" width=100%>
     </div>
     <!--活动会场-->
-    <div class="activity">
-      <img src="./images/activity/0a62002ed3ef0055064da37248c99069.jpg" v-for="item in 8" :key="item">
+    <div class="activity" v-for="(list,index) in home.haohuo_list " :key="index">
+      <ul class="left">
+        <img v-lazy="item" v-for="item in list.left" >
+      </ul>
+      <ul class="right">
+        <img v-lazy="item" v-for="item in list.right" >
+      </ul>
     </div>
-    <div class="activity">
-      <img src="./images/activity/1cd073f15561b4d83e98014e08bbb768.jpg" v-for="item in 8" :key="item">
-    </div>
-    <div class="activity">
-      <img src="./images/activity/3e66ab41c0bec3592f9bd7e41c5fa096.jpg" v-for="item in 8" :key="item">
-    </div>
-    <div class="activity">
-      <img src="./images/activity/3ea747d791b0923f775d1b23b5da9485.jpg" v-for="item in 8" :key="item">
-    </div>
-    <div class="activity">
-      <img src="./images/activity/4fd9b25c7e17a9d1648385df0f0ce6ac.jpg" v-for="item in 8" :key="item">
-    </div>
+
+
 
     <!--最惨奖-->
     <div class="banner1" >
-      <img src="./images/banner/313106e05cd8b140f4bc8d298d98e87a.jpg" width=100%>
-      <img src="./images/banner/bac4f238ed715999f7d5bd9d4f0ab56e.jpg" width=100%>
+      <img :src="home.zuican" width=100%>
+      <img v-lazy="home.zuican_content" width=100%>
     </div>
     <!--特别星球-->
-    <div class="banner1 banner_float">
-      <img src="./images/banner/4e129b980839446eabb5fce594f60364.jpg" width=100%>
-      <img src="./images/chao/62c5a1f0c1b4b535aee4a537864ecd45.jpg" width=49% style="float :left;">
-      <img src="./images/chao/ca4e375ccf9992ce0e8666c256b6ef4e.jpg" width=49% style="float :right;">
-      <img src="./images/chao/e25b9300c387beec0b28499a8f19d83e.jpg" width=49% style="float :right;">
+    <div class="banner1 banner_float" v-if="home.special_list">
+      <img :src="home.special" width=100%>
+      <img v-lazy="home.special_list[0]" width=49% style="float :left;">
+      <img v-lazy="home.special_list[1]" width=49% style="float :right;">
+      <img v-lazy="home.special_list[2]" width=49% style="float :right;">
     </div>
     <!--特色栏目-->
     <div class="banner1 banner_float">
-      <img src="./images/banner/83a8298fad417a66415c11e0acfac335.jpg" width=100%>
-      <img src="./images/more/18442aea515fdb23ec49d837bbe3dac1.jpg"
-           v-for=" item in 6" style="width: 49%; display: block;float: right">
+      <img :src="home.lanmu" width=100%>
+      <img v-lazy="list"
+           v-for="list in home.lanmu_list" style="width: 49%; height:116px; display: block;float: right">
     </div>
     <div class="desc">
       <div class="desc_top">
@@ -208,32 +144,39 @@
   import Swiper from 'swiper'
   import BScroll from 'better-scroll'
   import '../../../node_modules/swiper/dist/css/swiper.css'
+  import {mapState} from 'vuex'
 
     export default {
       components:{
           Header
       },
       mounted(){
-
-        this.$nextTick(()=>{
+        this.$store.dispatch('reHome', ()=>{
+          this.$nextTick(()=>{
             new Swiper('.swiper-container.scroll_wrap',{
               slidesPerView:3.5,
               freeMode:true,
               spaceBetween:10
             })
-          var swiper3 = new Swiper('.day.swiper-container', {
-            loop: true,
-            autoplay: true
+            var swiper3 = new Swiper('.day.swiper-container', {
+              loop: true,
+              autoplay: true
+            })
+            var swiper1 = new Swiper('.banner.swiper-container', {
+              loop: true,
+              autoplay: true,
+              pagination: {
+                el: '.swiper-pagination'
+              }
+            })
           })
-          var swiper1 = new Swiper('.banner.swiper-container', {
-            loop: true,
-            autoplay: true,
-            pagination: {
-              el: '.swiper-pagination'
-            }
-          })
+
+
         })
 
+      },
+      computed :{
+        ...mapState(['home'])
       }
     }
 
@@ -247,7 +190,7 @@
     background-color white
     position relative
     padding-top 80px
-    padding-bottom 60px
+    height 100%
     overflow hidden
     .dog
       position fixed
@@ -324,11 +267,15 @@
         .tit_right
           float right
           width 60%
-          .endTime
+          text-align center
+          vertical-align middle
+          line-height 20px
+          .text
+            border solid 1px $gray
+            padding 1px
           .more
-            float right
-            margin-right 0px
-            width 67px
+            width 70px
+            height 100%
       .surprise-scroll
         width 100%
         height 140px
@@ -367,13 +314,18 @@
     .activity
       width 100%
       background-color black
+      overflow hidden
       display flex
-      flex-wrap wrap
       justify-content space-around
-      >img
+      >ul
         width 49%
-        height 225px
+        float left
         margin 2px auto
+        >img
+          width 100%
+          height 225px
+          margin 1px auto
+
     .desc
       text-align center
       height  80px

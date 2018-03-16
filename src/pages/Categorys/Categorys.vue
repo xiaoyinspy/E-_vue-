@@ -14,6 +14,7 @@
 
 </template>
 <script>
+
     export default {
       data () {
         return {
@@ -24,7 +25,10 @@
           goto (url){
           this.$router.replace(url)
         }
-      }
+      },
+      mounted () {
+      },
+
     }
 
 </script>
@@ -37,7 +41,6 @@
     background-color $gray
     height 100%
     overflow hidden
-    padding-bottom 60px
     .cate_header
       height 40px
       line-height 40px

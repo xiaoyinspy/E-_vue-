@@ -84,14 +84,28 @@
                        margin: auto
 
 ##  day03
-    遗留的问题：
-        1.在brand中，使用bscroll,出现问题。
-        2.购物车显示与隐藏动画？？？点击切换
     今日任务：
         1.分类页面 动态数据的获取
         2.首页头部点击切换样式
         * 3.首页广告的设置
-        
-                       
+        4.filter过滤，格式化时间！！！！
+    遇到的问题：
+        1.页面加载时，数据还未获取到，出现 of undefied的现象
+
+        问题一：原因数据层架较多，可以采用this.$nextTick的方式，
+        在发送异步获取action时传递一个回调函数。
+              methods:{
+                setCate(category,currentIndex){
+                    this.currentIndex = currentIndex
+                    this.$store.dispatch('saveCateList',{cate_list:category.cate_list})
+                }
+              }
+         3.使用better-scroll滑动页面的时候出现问题: 左侧与右侧同时滑动          
+         问题三：给滑动元素的父元素设置固定高度，可以使子元素滑动。
+         （组员解决）
+         4.上下两个数组遍历的时候样式不一样（样式需要修改）
+           问题四： 写两个模板 cate_list.type来进行设置。
+          5.头部menus数据显示，需要考虑路由跳转 ???
+        6.路由跳转使用$router.back()存在问题？？？会跳转到第四个
 
         

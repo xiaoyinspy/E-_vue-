@@ -1,18 +1,18 @@
 <template>
     <div class="brand_box">
       <div class="brand_container">
-        <div class="brand_div" v-for="item in 5" :key="item">
+        <div class="brand_div" v-for="(item ,index) in brand" :key="index">
         <div class="brand_title">
-          <span class="title">—— 推荐品牌 ——</span>
+          <span class="title">—— {{item.title}} ——</span>
         </div>
         <div class="brand_content">
           <ul class="brand_container">
-            <li class="brand_item" v-for="item in 13" :key="item">
+            <li class="brand_item" v-for="(b,index) in item.list" :key="index">
               <div class="branner_img">
-                <img class="branner" src="./87feaa80f9fbed84c37a7b07da6324a1.jpg" alt="">
+                <img class="branner" :src="b.logo" alt="">
               </div>
-              <span class="name">原始猎食渴望</span>
-              <span class="address">加拿大</span>
+              <span class="name">{{b.name}}</span>
+              <span class="address">{{b.address}}</span>
             </li>
           </ul>
         </div>
@@ -22,15 +22,19 @@
 </template>
 <script>
   import BScroll from 'better-scroll'
-
+  import {mapState} from 'vuex'
 
     export default {
+      computed :{
+        ...mapState(['brand'])
+      },
       mounted (){
-          this.$nextTick( () =>{
-            new BScroll('.brand_box',{
-              click: true
-            })
+          this.$store.dispatch('reBrand')
 
+          this.$nextTick( () =>{
+              new BScroll('.brand_box',{
+                click: true
+              })
           })
 
       }
@@ -47,6 +51,8 @@
 .brand_box
   margin-top 2px
   background-color white
+  height 100%
+  overflow hidden
   .brand_container
     .brand_div
       .brand_title

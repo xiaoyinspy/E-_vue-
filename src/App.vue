@@ -19,6 +19,7 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   #app
-    height 100%
+    box-sizing border-box
     background-color white
+    padding-bottom 60px
 </style>

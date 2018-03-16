@@ -1,4 +1,9 @@
 
 import ajax from './ajax'
 
-export const reqCategorys = () => ajax('./categorys')
+export const req_Categorys = () => ajax('/categorys/class')
+
+export const req_Brand = () => ajax('/categorys/brand')
+
+export const req_Home = () => ajax('/home')
+

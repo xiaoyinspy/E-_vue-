@@ -5,7 +5,7 @@
         <i class="iconfont icon-fangwuxinxi"></i>
         <span class="text">首页</span>
       </li>
-      <li class="footer_item" @click="goto('/categorys')" :class="{on: $route.path == '/categorys'}">
+      <li class="footer_item" @click="goto('/categorys')" :class="{on: $route.path.slice(0,10) == '/categorys'}">
         <i class="iconfont icon-fenlei"></i>
         <span class="text">分类</span>
       </li>
