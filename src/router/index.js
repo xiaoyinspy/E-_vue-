@@ -7,6 +7,8 @@ import  Profile from '../pages/Profile/Profile.vue'
 import  ShopCart from '../pages/ShopCart/ShopCart.vue'
 import  Class from '../pages/Class/Class.vue'
 import  Brand from '../pages/Brand/Brand.vue'
+import All from '../pages/All/All.vue'
+
 
 Vue.use(VueRouter)
 
@@ -16,23 +18,41 @@ export default new VueRouter({
   routes: [
     {
       path:'/home',
-      component: Home
+      component: Home,
+      meta:{
+        showFooter: true
+      }
     },
     {
       path:'/categorys',
       component: Categorys,
+      meta:{
+        showFooter: true
+      },
       children:[
         {
           path:'/categorys/class',
-          component: Class
+          component: Class,
+          meta:{
+            showFooter: true,
+            showHeader: true
+          },
         },
         {
           path:'/categorys/brand',
-          component: Brand
+          component: Brand,
+          meta:{
+            showFooter: true,
+            showHeader: true
+          },
+        },
+        {
+          path:'/categorys/all',
+          component: All,
         },
         {
           path:'/categorys',
-          redirect: '/categorys/class'
+          redirect: '/categorys/class',
         },
       ]
     },

@@ -18,11 +18,11 @@
       <ul class="login_msg">
         <li class="msg1">
             <span class="person"></span>
-            <input type="text" placeholder="手机号/邮箱/用户名">
+            <input type="text"  maxlength="11" placeholder="手机号/邮箱/用户名" v-model="username">
          </li>
         <li class="msg2">
           <span class="password"></span>
-          <input type="text" placeholder="输入密码">
+          <input type="text" minlength="6" maxlength="18" placeholder="输入密码" v-model="password">
         </li>
       </ul>
       <div class="forget_msg"><span>忘记密码 ? </span></div>
@@ -31,17 +31,19 @@
       <ul class="login_msg">
         <li class="msg1">
           <span class="phone"></span>
-          <input type="text" placeholder="已注册的手机号">
+          <input  maxlength="11" :class="{right_phone_number: rightPhoneNumber}"
+                  type="text" placeholder="已注册的手机号" v-model="phone">
         </li>
         <li class="msg1">
           <span class="password"></span>
-          <input type="text" placeholder="请输入图片内容">
+          <input type="text" maxlength="11" placeholder="请输入图片内容"  v-model="code">
           <span class="img"><img src="./login/seccode.jpg"></span>
         </li>
         <li class="msg2">
           <span class="password"></span>
-          <input type="text" placeholder="动态密码">
-          <div class="recode">获取动态验证码</div>
+          <input type="text" placeholder="动态密码" v-model="activePassword"
+                 ref="captcha" @click="getCaptchaCode">
+          <div class="recode"@click.prevent="getVerifyCode">获取动态验证码</div>
         </li>
       </ul>
       <div class="forget_msg"><span>忘记密码 ? </span></div>
@@ -52,24 +54,84 @@
       <span class="icon"><img src="./login/login_ico4.png"></span>
       <span class="icon"><img src="./login/login_ico2.png"></span>
     </div>
+    <alert-tip  v-if="showAlert"
+                @closeTip="closeTip"
+                :alertText="alertText"
+            />
   </div>
 </template>
 <script>
+  import AlertTip from '../../components/AlertTip/AlertTip.vue'
+  import {mapActins} from 'vuex'
   import PubSub  from 'pubsub-js'
+  import {reqCaptchas,pwdLogin,sendCode,smsLogin,reqUser} from '../../api/index'
     export default {
         methods:{
           goback(){
-            PubSub.publish('toggleShow2')
+            //PubSub.publish('toggleShow2')
+            this.$router.back()
           },
           tabSwitch(value) {
               this.isSeleced =value
+          },
+//         async login (){
+//            let result
+//           const  {isSeleced} = this
+//              if(isSeleced){
+//                const  {username, password } = this
+//                  //true ,表示普通登录
+//              if(!username){
+//                    this.showAlert =true
+//                    this.alertText = '请输入手机号'
+//              }else(!(/^\d{6}$/gi.test(password))){
+//                  this.showAlert = true
+//                  this.alertText = '密码格式错误'
+//            }
+//                result = await
+//
+//          }
+//          },
+          // 获取图形验证码
+          getCaptchaCode() {
+            this.$refs.captcha.src = 'http://localhost:3000/captcha?time='+new Date()
+          },
+          //获取短信验证码
+          async getVerifyCode(){
+              if(this.rightPhoneNumber){
+                //发送短信验证码
+                let result = await sendCode(this.phone)
+                if(result.code === 1){
+                    alert('登陆成功！！')
+                }
+              }
+          },
+          //关系提示框
+          closeTip(){
+            this.showAlert = false
           }
+
         },
         data () {
             return{
-              isSeleced: true //默认true ,表示普通登录； false,表示手机动态密码登录
+              isSeleced: true ,//默认true ,表示普通登录； false,表示手机动态密码登录
+              username: '', //用户名
+              password: '', //用户密码
+
+              phone: '', //手机号
+              code: '', //图片验证码
+              activePassword: '',//动态验证码
+              showAlert: false, //显示提示组件
+              alertText: null, //提示的内容
             }
-        }
+        },
+        computed :{
+          rightPhoneNumber (){
+            return  /^1\d{10}$/.test(this.phone)
+          }
+        },
+      components: {
+            AlertTip
+      }
     }
 
 </script>
@@ -140,6 +202,11 @@
           bottom-border-1px($gray)
           padding 12px 0 12px 30px
           position relative
+          >input
+            outline none
+            color $gray
+            &.right_phone_number
+              color #000
           >span
             float: left
             display: inline

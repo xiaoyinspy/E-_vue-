@@ -1,5 +1,5 @@
 <template>
-  <div class="footer"  v-if="!isHidden">
+  <div class="footer">
     <ul class="footer_content">
       <li class="footer_item" @click="goto('/home')" :class="{on: $route.path == '/home'}">
         <i class="iconfont icon-fangwuxinxi"></i>
@@ -39,14 +39,14 @@
           }
       },
       mounted (){
-        PubSub.subscribe('toggleShow2', () =>{
-          this.isHidden = false
-          this.$router.push('/home')
-        })
-        PubSub.subscribe('toggleShow1', () =>{
-          this.isHidden = false
-          this.$router.push('/home')
-        })
+//        PubSub.subscribe('toggleShow2', () =>{
+//          this.isHidden = false
+//          this.$router.push('/home')
+//        })
+//        PubSub.subscribe('toggleShow1', () =>{
+//          this.isHidden = false
+//          this.$router.push('/home')
+//        })
       }
 
     }

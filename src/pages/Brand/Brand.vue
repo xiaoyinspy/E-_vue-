@@ -18,6 +18,9 @@
         </div>
         </div>
       </div>
+      <div class="allgoods" @click="goto">
+        全部
+      </div>
     </div>
 </template>
 <script>
@@ -37,6 +40,11 @@
               })
           })
 
+      },
+      methods :{
+          goto(){
+            this.$router.push('/categorys/all')
+          }
       }
 
 
@@ -53,6 +61,18 @@
   background-color white
   height 100%
   overflow hidden
+  .allgoods
+    position fixed
+    right 10px
+    bottom 60px
+    width 40px
+    height 40px
+    border-radius 20px
+    background-color rgba(0,0,0,0.2)
+    color: white
+    font-weight bold
+    line-height 40px
+    text-align center
   .brand_container
     .brand_div
       .brand_title

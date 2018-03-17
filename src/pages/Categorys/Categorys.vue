@@ -1,6 +1,6 @@
 <template>
 <div class="categorys">
-  <header class="cate_header">
+  <header class="cate_header" v-if="$route.meta.showHeader">
     <div class="header_item">
       <span class="item left"><span :class="{on:$route.path == '/categorys/class'}" @click="goto( '/categorys/class')">分类</span></span>
     </div>

@@ -3,6 +3,7 @@ import {
   req_Categorys,
   req_Brand,
   req_Home,
+  req_BrandList
 } from './../api/index'
 
 import {
@@ -10,6 +11,7 @@ import {
   SAVE_CATELIST,
   SAVE_BRAND,
   SAVE_HOME,
+  SAVE_BRANDLIST
 }from './mutations-type'
 
 
@@ -31,5 +33,13 @@ export default {
     const result = await req_Home()
     commit(SAVE_HOME,{home:result.data})
     callback && callback()
-  }
+  },
+  async  reBrandList ({commit},callback) {
+    const result = await  req_BrandList()
+    commit(SAVE_BRANDLIST,{brand:result.data})
+    callback && callback()
+  },
+
+
+
 }

@@ -3,7 +3,8 @@ import {
   SAVE_CATEGORYS,
   SAVE_CATELIST,
   SAVE_BRAND,
-  SAVE_HOME
+  SAVE_HOME,
+  SAVE_BRANDLIST
 }from './mutations-type'
 
 export default {
@@ -18,5 +19,8 @@ export default {
     },
     [SAVE_HOME] (state,{home}){
       state.home = home
+    },
+    [SAVE_BRANDLIST] (state,{brand}){
+      state.brandlist = brand
     }
 }

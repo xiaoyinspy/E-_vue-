@@ -2,7 +2,7 @@
   <div id="app">
 
     <router-view></router-view>
-    <Footer></Footer>
+    <Footer v-if="$route.meta.showFooter"></Footer>
   </div>
 </template>
 
@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+body
+  background-color white
   #app
     box-sizing border-box
     background-color white
