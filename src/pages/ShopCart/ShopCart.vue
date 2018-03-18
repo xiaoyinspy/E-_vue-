@@ -38,12 +38,11 @@
         color: $gray
         font-size 13px
         .cart_pic
-          width 100px
-          height 100px
+          width 180px
+          height 180px
           background-repeat no-repeat
-          background-image url("./shopcart/cart-ico.png")
-          background-position -200px
-          background-color $gray
+          background-image url("./shopcart/cart-ico1.png")
+          background-size 100%
         .cart_button
           font-size 14px
           width 50%

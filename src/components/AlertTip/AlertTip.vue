@@ -10,17 +10,18 @@
     </section>
   </div>
 </template>
-<script>
-    export default {
-        props: ['alertText'],
-        methods:{
-            closeTip(){
-                this.$emit('closeTip')
-            }
-        }
-    }
 
+<script>
+  export default {
+    props: ['alertText'],
+    methods: {
+      closeTip() {
+        this.$emit('closeTip')
+      }
+    }
+  }
 </script>
+
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import '../../common/stylus/mixin.styl';
 
@@ -41,55 +42,61 @@
     right: 0;
     bottom: 0;
     z-index: 200;
+    background: rgba(0, 0, 0, .5)
     .tip_text_container
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-top: -6rem;
-      margin-left: -6rem;
-      width: 12rem;
+      margin-top: -90px
+      margin-left: -110px
+      width: 60%
       animation: tipMove .4s;
       background-color: rgba(255, 255, 255, 1);
       border: 1px;
-      padding-top: .6rem;
+      padding-top: 20px
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      border: 1px;
-      border-radius: 0.25rem;
+      border-radius: 5px
       .tip_icon
-        $wh(3rem, 3rem);
-        border: 0.15rem solid #f8cb86;
+        width: 55px
+        height: 55px
+        border: 2px solid #f8cb86;
         border-radius: 50%;
+        font-size 20px
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         span:nth-of-type(1)
-          $wh(.12rem, 1.5rem);
+          width: 2px
+          height: 30px
           background-color: #f8cb86;
         span:nth-of-type(2)
-          $wh(.2rem, .2rem);
+          width: 2px
+          height: 2px
           border: 1px;
           border-radius: 50%;
-          margin-top: .2rem;
-          background-color: #f8cb86;
+          margin-top: 2px
+          background-color #f8cb86
       .tip_text
-        $sc(.7rem, #333);
-        line-height: .9rem;
-        text-align: center;
-        margin-top: .8rem;
-        padding: 0 .4rem;
+        font-size 14px
+        color #333
+        line-height 20px
+        text-align center
+        margin-top 10px
+        padding 0 5px
       .confrim
-        $sc(.8rem, #fff);
-        font-weight: bold;
-        margin-top: .8rem;
-        background-color: #4cd964;
-        width: 100%;
-        text-align: center;
-        line-height: 1.8rem;
-        border: 1px;
-        border-bottom-left-radius: 0.25rem;
-        border-bottom-right-radius: 0.25rem;
+        font-size 18px
+        font-weight bold
+        margin-top 10px
+        background-color #4cd964
+        width 100%
+        text-align center
+        line-height 35px
+        border 1px
+        color #fff
+        border-bottom-left-radius 5px
+        border-bottom-right-radius 5px
 </style>

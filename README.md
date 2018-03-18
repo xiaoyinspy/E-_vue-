@@ -129,8 +129,77 @@
         品牌 全部；
         
         今天遇到的问题：
-        1.动画效果的设置 使用vue的transition组件
+        1.动画效果的设置使用vue的transition组件
         2.登录注册的验证还是有些混乱，未整理清除
-        3.页面数据还未获取成功。
+        3.使用BScroll监视页面滑动，
+          使用到了scrollEnd,监视页面滑动的停止位置；
+          使用scrollTo来设置活动效果；
+          
+            
+    今日进度：
+        1.完成了全部页面的数据获取，以及页面交互效果
+        2.完成了整个页面的数据获取
+##  day05
+      
+      项目描述: 
+         1）此项目是一个宠物商城的移动端SPA应用，包含前端，后端。
+         2）项目包括：商城首页/分类列表/购物车列表/全部品牌页/登录注册页面 
+         3）前端使用vue全家桶框架++ES6+Webpack等前端技术
+         4）使用到了swiper/better-scroll等插件库
+         5）采用模块化、组件化、工程化的模式开发
+      技术选型：
+         前台数据处理/交互/组件化
+                vue(vue全家桶/技术栈)
+                vue-router
+                vuex
+                mint-ui
+                vue-lazyload
+                滑动库：
+                better-scroll
+                swiper
+         前后台交互
+                mock数据：mockjs
+                接口测试：postman
+                ajax请求：axios
+         模块化
+                ES6
+                babel
+         项目构建/工程化
+                webpack
+                vue-cli
+                eslint
+         css编译器
+                stylus
+         前端路由
+             
+              一级路由：  首页  /home
+                                /Home.vue
+                          分类  /categorys
+                                /Categorys.vue
+                          购物车 /shopcart
+                                /Shopcart.vue
+                          登录   /profile
+                                /Profile.vue
+              二级路由（分类的）   分类 /class
+                                          Class.vue
+                                   品牌 /brand
+                                          Brand.vue
+                                   全部品牌 /all
+                                          All.vue
+                                         
+                
+                
+        1.今日进度
+
+        
+        首页实现的功能：
+          1）使用了swiper，实现轮播图
+          2）better-scroll 实现滑动回弹效果    
+        分类页面实现的功能：
+          1）动态加载数据    
+        登陆注册的前台验证
+          1）
+        
+           
        
          

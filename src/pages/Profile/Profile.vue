@@ -1,3 +1,4 @@
+
 <template>
   <div class="profile">
     <div class="header">
@@ -18,7 +19,8 @@
       <ul class="login_msg">
         <li class="msg1">
             <span class="person"></span>
-            <input type="text"  maxlength="11" placeholder="手机号/邮箱/用户名" v-model="username">
+            <input type="text"  maxlength="11" placeholder="手机号/邮箱/用户名"
+                   :class="{right_phone_number: rightUserName}" v-model="username">
          </li>
         <li class="msg2">
           <span class="password"></span>
@@ -37,18 +39,18 @@
         <li class="msg1">
           <span class="password"></span>
           <input type="text" maxlength="11" placeholder="请输入图片内容"  v-model="code">
-          <span class="img"><img src="./login/seccode.jpg"></span>
+          <span class="img" @click="getCaptchaCode"><img ref="captcha" src="./login/seccode.jpg"></span>
         </li>
         <li class="msg2">
           <span class="password"></span>
-          <input type="text" placeholder="动态密码" v-model="activePassword"
-                 ref="captcha" @click="getCaptchaCode">
-          <div class="recode"@click.prevent="getVerifyCode">获取动态验证码</div>
+          <input type="text" placeholder="动态密码" v-model="activePassword">
+          <div class="recode" v-if="!isGetCode" @click.prevent="getVerifyCode">获取动态验证码</div>
+          <div class="recode on"  v-else="isGetCode">{{computedTime}}</div>
         </li>
       </ul>
       <div class="forget_msg"><span>忘记密码 ? </span></div>
     </div>
-    <div class="login_button">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
+    <div class="login_button" @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;录</div>
     <div class="login_text">合作网站登录</div>
     <div class="login_icon">
       <span class="icon"><img src="./login/login_ico4.png"></span>
@@ -74,34 +76,75 @@
           tabSwitch(value) {
               this.isSeleced =value
           },
-//         async login (){
-//            let result
-//           const  {isSeleced} = this
-//              if(isSeleced){
-//                const  {username, password } = this
-//                  //true ,表示普通登录
-//              if(!username){
-//                    this.showAlert =true
-//                    this.alertText = '请输入手机号'
-//              }else(!(/^\d{6}$/gi.test(password))){
-//                  this.showAlert = true
-//                  this.alertText = '密码格式错误'
-//            }
-//                result = await
-//
-//          }
-//          },
+         async login (){
+            let result
+           const  {isSeleced} = this
+              if(isSeleced){
+                const  {username, password } = this
+                  //true ,表示普通登录
+              if(!username){
+                    this.showAlert =true
+                    this.alertText = '请输入用户名'
+                    return
+              }else if (!this.rightUserName){
+                this.showAlert =true
+                this.alertText = '用户名格式错误'
+                return
+              }else if(!(/^\d{6}$/gi.test(password))){
+                  this.showAlert = true
+                  this.alertText = '密码格式错误'
+                  return
+            } else {
+                result = await pwdLogin(username, password, '123')
+              }
+          } else {
+                  //false, 表示手机号登录
+                const { phone,code,activePassword} = this
+                if(!phone){
+                  this.showAlert =true
+                  this.alertText = '请输入手机号'
+                  return
+                }else if(!this.rightPhoneNumber){
+                  this.showAlert =true
+                  this.alertText = '手机号格式错误'
+                  return
+                }else{
+                    result = await smsLogin( phone,activePassword)
+                }
+              }
+                if(result.data == 0){
+                  this.showAlert =true
+                  this.alertText = '恭喜您，登录成功'
+                  return
+                }else {
+
+                  this.showAlert =true
+                  this.alertText = result.msg
+                }
+          },
           // 获取图形验证码
           getCaptchaCode() {
+            console.log('11111');
             this.$refs.captcha.src = 'http://localhost:3000/captcha?time='+new Date()
           },
           //获取短信验证码
           async getVerifyCode(){
+              this.isGetCode = true
               if(this.rightPhoneNumber){
                 //发送短信验证码
                 let result = await sendCode(this.phone)
-                if(result.code === 1){
-                    alert('登陆成功！！')
+                this.setIntervalId = setInterval(()=>{
+                  this.computedTime --
+                  if(this.computedTime == 0){
+                    this.isGetCode = false
+                    clearInterval(this.setIntervalId)
+                  }
+                },1000)
+                if(result.code == 0){
+                    console.log('短信发送成功');
+                }else{
+                  this.showAlert =true
+                  this.alertText = '密码发送失败，请重试！'
                 }
               }
           },
@@ -122,11 +165,17 @@
               activePassword: '',//动态验证码
               showAlert: false, //显示提示组件
               alertText: null, //提示的内容
+
+              isGetCode: false , //是否点击获取验证码
+              computedTime: 30 , // 倒计时
             }
         },
         computed :{
           rightPhoneNumber (){
             return  /^1\d{10}$/.test(this.phone)
+          },
+          rightUserName () {
+            return  /^1\d{10}$/.test(this.username)
           }
         },
       components: {
@@ -229,6 +278,9 @@
             width 80px
             height 35px
             display inline-block
+            >img
+              width 100%
+              height 35px
           .recode
             width 100px
             height 30px
@@ -240,6 +292,9 @@
             line-height 30px
             float right
             margin-top -5px
+            &.on
+              border solid 1px $gray
+              color $gray
       .forget_msg
         height 20px
         box-sizing content-box

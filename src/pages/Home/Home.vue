@@ -1,8 +1,12 @@
 <template>
+  <div>
+  <Header class="header"
+          :menus="home.menus"
+          @closeIcon="closeIcon"
+  />
   <div class="home">
     <!--小狗眨眼动画效果-->
     <div class="dog"></div>
-    <Header class="header" :menus="home.menus"/>
     <!--轮播图-->
     <div class="banner_item">
       <div class="banner swiper-container">
@@ -14,7 +18,7 @@
         <div class="swiper-pagination"></div>
       </div>
       <div class="banner_bottom">
-        <img v-lazy="home.dog_img">
+        <img :src="home.dog_img">
       </div>
       <div class="columnnavdiv">
         <!--menu菜单图标-->
@@ -136,7 +140,7 @@
         © wap.epet.com 版权：重庆易宠科技有限公司
       </div>
     </div>
-
+  </div>
   </div>
  </template>
 <script>
@@ -177,6 +181,9 @@
       },
       computed :{
         ...mapState(['home'])
+      },
+      methods() {
+
       }
     }
 
@@ -185,11 +192,18 @@
   @import '../../common/stylus/index.styl'
   @import '../../common/stylus/mixin.styl'
 
+  .header
+    position fixed
+    z-index 10
+    left 0
+    top 0
+    width 100%
+    background-color white
   .home
     width 100%
     background-color white
     position relative
-    padding-top 80px
+    padding-top 130px
     height 100%
     overflow hidden
     .dog
@@ -209,15 +223,6 @@
           background-position: -42.5px 0
         100%
           background-position: 0 0
-    .header
-      position fixed
-      z-index 10
-      left 0
-      top 0
-      height 80px
-      width 100%
-      background-color white
-      padding-top 5px
     .banner_item
       width 100%
       margin-top 10px

@@ -36,7 +36,9 @@
 
   @import '../../common/stylus/index.styl'
   @import '../../common/stylus/mixin.styl'
-
+#app
+  height 100%
+  overflow-y:hidden
   .categorys
     background-color $gray
     height 100%

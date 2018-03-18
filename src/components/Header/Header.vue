@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!--广告区-->
+    <div class="advertising" v-if="isShow">
+      <span @click="closeIcon"></span>
+    </div>
     <div class="header_top">
       <span class="select">狗狗|重庆<i class="iconfont icon-sanjiao"></i></span>
       <div class="search">
@@ -30,6 +34,7 @@
       data () {
         return {
             currentIndex: 0 , //当前选中
+            isShow: true, //广告的显示与隐藏
         }
       },
       mounted (){
@@ -45,6 +50,10 @@
       methods:{
         setIndex(index){
             this.currentIndex = index
+        },
+        closeIcon(){
+            this.isShow = false
+          this.$emit('closeIcon')
         }
       }
     }
@@ -52,7 +61,22 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import '../../common/stylus/index.styl'
-
+.advertising
+  width 100%
+  height 55px
+  background-image url("./guanggao/c63b6e6cf483cbb61196f658920a9d6e.jpg")
+  background-size 100% 100%
+  background-color white
+  position relative
+  >span
+    display inline-block
+    width 20px
+    height 20px
+    background-image url("./guanggao/closebtn_03.png")
+    background-size 100%
+    position absolute
+    top 5px
+    left 5px
 .header_top
   display flex
   justify-content space-around

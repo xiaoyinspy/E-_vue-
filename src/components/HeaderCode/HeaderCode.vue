@@ -16,8 +16,11 @@
            <span class="text">分类列表</span>
          </router-link>
          <router-link tag="a" to="/shopcart">
-           <span class="icon header_icon4"></span>
+           <span class="icon header_icon4">
+             <span class="circle">0</span>
+           </span>
            <span class="text">购物车</span>
+
          </router-link>
          <router-link tag="a" to="/profile">
            <span class="icon header_icon5"></span>
@@ -118,11 +121,23 @@
           background-image url("./shopcart/head_icon2.png")
         &.header_icon4
           background-image url("./shopcart/head_icon4.png")
+          position relative
+          .circle
+            position absolute
+            top -4px
+            right -4px
+            display inline-block
+            width 20px
+            height 20px
+            background-color red
+            border-radius 10px
+            color white
         &.header_icon5
           background-image url("./shopcart/head_icon5.png")
       .text
         font-size 14px
         color black
+
 
 
 </style>
